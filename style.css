@@ -1,0 +1,416 @@
+footer {
+  width: 100%;
+  background: #111;
+  color: #ddd;
+  text-align: center;
+  padding: 32px 0 24px 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+/* Founders Section */
+.founders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.founders h3{
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+}
+
+.founders-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 64px;
+  margin-top: 100px;
+}
+
+.founder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.founder-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.founder-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+.founder-name {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #222;
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .founders-list {
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+  .founder-name {
+    font-size: 1rem;
+  }
+}
+/* NYCER Brand Letter Styling */
+.nycer-brand {
+  font-weight: bold;
+  letter-spacing: 0.04em;
+  font-family: inherit;
+}
+.nycer-n { color: var(--brand-blue); }
+.nycer-y { color: #111; }
+.nycer-c { color: var(--brand-green); }
+.nycer-e { color: var(--brand-yellow); }
+.nycer-r { color: var(--brand-red); }
+hr {
+  width: 500px;
+  height: 1px;
+  background: #e0e0e0;
+  border: none;
+  border-radius: 2px;
+  margin: 48px auto;
+  opacity: 1;
+}
+/* Brand Colors */
+:root {
+  --brand-blue: #0085ff;
+  --brand-green: #09ad00;
+  --brand-yellow: #f9ac00;
+  --brand-red: #d30033;
+}
+
+/* Hero Section Two-Column Layout */
+
+.vision {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    gap: 24px;
+    margin-top: 5%;
+    margin-bottom: 10%;
+}
+
+.vision h3 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+.vision p {
+  font-size: 1.5rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 800 px;
+}
+
+.mission {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  gap: 24px;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.mission h3 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+
+.mission p {
+  font-size: 1.5rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.mission div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 80%;
+}
+
+.bluebox, .greenbox, .yellowbox, .redbox {
+    color: var(--brand-blue);
+    font-size: 1.5rem;
+    padding: 16px 32px;
+    border-radius: 8px;
+    border-color: var(--brand-blue);
+    border-width: 5px;
+    border-style: solid;
+    font-weight: 400;
+}
+
+.greenbox {
+  color: var(--brand-green);
+  border-color: var(--brand-green);
+}
+
+.yellowbox {
+  color: var(--brand-yellow);
+  border-color: var(--brand-yellow);
+}   
+
+.redbox {
+  color: var(--brand-red);
+  border-color: var(--brand-red);
+}   
+
+
+.hero-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  min-height: 350px;
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.hero-left {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+.hero-left h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.5em;
+}
+.hero-left p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #666;
+}
+.hero-left button {
+  font-family: inherit;
+  width: fit-content;
+  font-size: 1.5rem;
+  padding: 24px 64px;
+  background: var(--brand-blue);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  font-weight: 400;
+  transition: background 0.2s;
+}
+.hero-left button:hover {
+  background: #005fa3;
+}
+.hero-right {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-right img {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  }
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    gap: 32px;
+    min-height: 0;
+  }
+  .hero-right img {
+    max-height: 220px;
+  }
+}
+#navbar {
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  min-width: 320px;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0;
+  box-shadow: 0 16px 16px -8px rgba(0, 0, 0, 0.505);
+  z-index: 100;
+  background: #fff;
+}
+#navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 40px;
+  height: 60px;
+}
+#navbar li {
+  display: inline-block;
+}
+#navbar a {
+  text-decoration: none;
+  color: #222;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.2s;
+}
+#navbar li:nth-child(1) a:hover {
+  color: var(--brand-blue);
+  font-weight: bold;
+}
+#navbar li:nth-child(1) a:focus {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--brand-blue);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+#navbar li:nth-child(2) a:hover {
+  font-weight: bold;
+  color: inherit;
+}
+#navbar li:nth-child(2) a:focus {
+  font-weight: bold;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #111;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+#navbar li:nth-child(3) a:hover {
+  color: var(--brand-green);
+  font-weight: bold;
+}
+#navbar li:nth-child(3) a:focus {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--brand-green);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+#navbar li:nth-child(4) a:hover {
+  color: var(--brand-yellow);
+  font-weight: bold;
+}
+#navbar li:nth-child(4) a:focus {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--brand-yellow);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+#navbar li:nth-child(5) a:hover {
+  color: var(--brand-red);
+  font-weight: bold;
+}
+#navbar li:nth-child(5) a:focus {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--brand-red);
+  text-underline-offset: 6px;
+  text-decoration-thickness: 3px;
+}
+body, html, * {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+#header-region {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 250px;
+}
+#header-logo {
+  height: 100%;
+  flex: 0 0 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#header-logo img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+#header-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+  padding-left: 40px;
+}
+#header-title {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 1.2rem;
+}
+#header-subtitle {
+  font-size: 1.5rem;
+  color: #666;
+}
+@media (max-width: 1024px) {
+  #header-region { flex-direction: column; height: auto; min-height: 300px; }
+  #header-logo { flex: none; height: 220px; }
+  #header-text { padding-left: 0; align-items: center; text-align: center; }
+}
+
+.site-container {
+  width: 2160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 2160px) {
+  .site-container { width: 1920px; }
+}
+@media (max-width: 1920px) {
+  .site-container { width: 1366px; }
+}
+@media (max-width: 1366px) {
+  .site-container { width: 1024px; }
+}
+@media (max-width: 1024px) {
+  .site-container { width: 800px; }
+}
+@media (max-width: 800px) {
+  .site-container { width: 480px; }
+}
+@media (max-width: 480px) {
+  .site-container { width: 100vw; }
+}
+
