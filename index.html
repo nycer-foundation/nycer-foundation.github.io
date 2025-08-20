@@ -9,24 +9,27 @@
 </head>
 <body>
     <!-- Header -->
-    <header id="header-region" class="site-container">
-      <div id="header-logo">
+    <header class="header-container site-container">
+      <div class="header-logo">
         <img src="logo-image.png" alt="NYCER Logo">
       </div>
-      <div id="header-text">
-        <div id="header-title">NYCER Foundation</div>
-        <div id="header-subtitle">Nexus of Young Computer Engineers &amp; Researchers</div>
+      <div class="header-text">
+        <div class="header-title">NYCER Foundation</div>
+        <div class="header-subtitle">Nexus of Young Computer Engineers &amp; Researchers</div>
       </div>
     </header>
-    <div id="navbar">
+
+    <div class="navbar">
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">What is <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span></a></li>
-        <li><a href="#">Meet our members</a></li>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#vision">What is <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span></a></li>
+        <li><a href="#founders">Meet our members</a></li>
         <li><a href="#">What are we upto</a></li>
         <li><a href="#">Get in touch</a></li>
       </ul>
     </div>
+
+  <div id="hero"></div>
   <!-- Hero Section -->
   <section class="site-container hero-section">
     <div class="hero-left">
@@ -39,7 +42,7 @@
     </div>
   </section>
 
-  <hr>
+  <hr id="vision">
 
   <!-- Vision Section -->
   <section class="site-container vision">
@@ -47,24 +50,22 @@
     <p>The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation exists to empower young minds in computer science by building sustainable collaborative networks that amplify individual impact and drive innovation in socially, economically and environmentally responsible research areas.</p>
   </section>
 
-  <hr>
-
   <!-- Mission Section -->
   <section class="site-container mission">
     <h3>OUR MISSION</h3>
     <p>The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation aims to</p>
     <div>
-      <div class="bluebox">BUILD A SELF-SUSTAINING NETWORK OF<br>BRILLIANT MINDS IN COMPUTING</div>
-      <div class="greenbox">AMPLIFY THE IMPACT OF YOUNG<br>INDIVIDUAL INNOVATORS IN TECHNOLOGY</div>
-      <div class="yellowbox">ADDRESS PRESSING SOCIAL, ECONOMIC AND ENVIRONMENTAL<br>CHALLENGES THROUGH TECHNOLOGICAL INNOVATION</div>
-      <div class="redbox">UPHOLD ETHICAL STANDARDS BY PROMOTING<br>MORALLY GROUNDED ADVANCES IN COMPUTING.</div>
+      <div class="box bluebox">BUILD A SELF-SUSTAINING NETWORK OF<br>BRILLIANT MINDS IN COMPUTING</div>
+      <div class="box greenbox">AMPLIFY THE IMPACT OF YOUNG<br>INDIVIDUAL INNOVATORS IN TECHNOLOGY</div>
+      <div class="box yellowbox">ADDRESS PRESSING SOCIAL, ECONOMIC AND ENVIRONMENTAL<br>CHALLENGES THROUGH TECHNOLOGICAL INNOVATION</div>
+      <div class="box redbox">UPHOLD ETHICAL STANDARDS BY PROMOTING<br>MORALLY GROUNDED ADVANCES IN COMPUTING.</div>
     </div>
   </section>
 
-  <hr>
+  <hr id="founders">
 
   <!-- Founders Section -->
-  <section class="site-container founders">
+  <section class="site-container founders" id="founders">
     <h3>OUR FOUNDERS</h3>
     <div class="founders-list">
       <div class="founder">
@@ -72,18 +73,26 @@
           <img src="founder-left.png" alt="Dr. Ayan Kumar Panja">
         </div>
         <div class="founder-name">Dr. Ayan Kumar Panja</div>
+        <div class="founder-designation">Treasurer</div>
+        <div class="founder-description">Dr. Ayan Kumar Panja contributes in the areas of smart sensing, indoor-outdoor localization, and wireless systems. His research explores context-aware computing and edge-based learning systems.</div>
+        
       </div>
       <div class="founder">
         <div class="founder-img">
           <img src="founder-middle.png" alt="Dr. Swarnendu Ghosh">
         </div>
         <div class="founder-name">Dr. Swarnendu Ghosh</div>
+        <div class="founder-designation">President</div>
+        <div class="founder-description">Dr. Swarnendu Ghosh specializes in computer vision, deep learning, and generative AI. His scholarly contributions range from neural architectures and image segmentation to graph-based representation learning.</div>
       </div>
+
       <div class="founder">
         <div class="founder-img">
           <img src="founder-right.png" alt="Dr. Deepsubhra Guha Roy">
         </div>
         <div class="founder-name">Dr. Deepsubhra Guha Roy</div>
+        <div class="founder-designation">Secretary</div>
+        <div class="founder-description">Dr. Deepsubhra Guha Roy brings deep expertise in mobile cloud computing, federated learning, and IoT systems. His work focuses on integrating intelligent orchestration with secure, scalable digital infrastructures.</div>
       </div>
     </div>
   </section>
