@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYCER Foundation</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Montserrat', sans-serif; }
+    .nycer-n { color: #0085ff; }
+    .nycer-y { color: #111; }
+    .nycer-c { color: #09ad00; }
+    .nycer-e { color: #f9ac00; }
+    .nycer-r { color: #d30033; }
+
+    
+
+    /* Fade-in animation */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+
+* {
+  font-family: Open Sans;
+}
+
+.footer section {
+  width: 100%;
+  display: inline-block;
+  background: #333;
+  height: 50vh;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.footer-distributed{
+	background: #666;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="flex flex-row items-center h-[250px] px-[5%]">
+    <div class="flex items-center justify-center h-full w-[250px] flex-none">
+      <img src="logo-image.png" alt="NYCER Logo" class="h-full w-auto block">
+    </div>
+    <div class="flex flex-col justify-center items-end text-right  text-[1.2rem]"
+    style="flex: 1; align-items: flex-end; text-align: right; padding-left: 40px;">
+      <div class="text-5xl font-semibold mb-5">NYCER Foundation</div>
+      <div class="text-2xl text-gray-600">Nexus of Young Computer Engineers & Researchers</div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <div class="sticky top-0 w-screen border-b shadow-md bg-white z-50 fade-section">
+    <ul class="flex justify-center items-center gap-10 h-[60px]">
+      <li><a href="#hero" class="text-lg font-medium px-3 py-2 hover:font-bold hover:text-[#0085ff]">Home</a></li>
+      <li><a href="#vision" class="text-lg font-medium px-3 py-2 hover:font-bold">What is 
+        <span class="font-bold tracking-wider">
+          <span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span>
+        </span></a>
+      </li>
+      <li><a href="#founders" class="text-lg font-medium px-3 py-2 hover:font-bold hover:text-[#09ad00]">Meet our members</a></li>
+      <li><a href="#" class="text-lg font-medium px-3 py-2 hover:font-bold hover:text-[#f9ac00]">What are we upto</a></li>
+      <li><a href="#" class="text-lg font-medium px-3 py-2 hover:font-bold hover:text-[#d30033]">Get in touch</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="flex flex-row items-center justify-between gap-12 min-h-[350px] my-12 max-w-[1366px] mx-auto px-6 fade-section">
+    <div class="flex flex-col justify-center gap-6 flex-1">
+      <h2 class="text-3xl font-normal">Connecting<br>Brilliance, Passion & Purpose</h2>
+      <p class="text-lg text-gray-600 leading-relaxed">
+        The <span class="font-bold tracking-wider"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation is a non-profit body composed of a group of young researchers from the various computer science and engineering domain to promote collaborative interdisciplinary research and development.
+      </p>
+      <button class="text-xl px-16 py-6 bg-[#0085ff] text-white rounded-xl hover:bg-[#005fa3]">JOIN TODAY</button>
+    </div>
+    <div class="flex justify-center items-center flex-1">
+      <img src="hero-image.png" alt="Hero Illustration" class="max-w-full max-h-[500px]">
+    </div>
+  </section>
+
+  <hr id="vision" class="w-[500px] h-px bg-gray-300 border-none rounded mx-auto my-6 fade-section">
+
+  <!-- Vision Section -->
+  <section class="flex flex-col items-center justify-center text-center p-5 gap-5 max-w-[1366px] mx-auto fade-section">
+    <h3 class="text-3xl font-normal">OUR VISION</h3>
+    <p class="text-lg text-gray-600 leading-relaxed max-w-[1024px] text-justify transition-transform duration-300 hover:scale-105">
+      The <span class="font-bold tracking-wider"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation exists to empower young minds in computer science by building sustainable collaborative networks that amplify individual impact and drive innovation in socially, economically and environmentally responsible research areas.
+    </p>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="flex flex-col items-center justify-center text-center py-10 px-5 gap-6 max-w-[1366px] mx-auto fade-section">
+    <h3 class="text-3xl font-normal">OUR MISSION</h3>
+    <p class="text-lg text-gray-600 leading-relaxed max-w-[1024px]">
+      The <span class="font-bold tracking-wider"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation aims to
+    </p>
+    <div class="flex flex-col items-center justify-center gap-12 w-4/5">
+      <div class="box border-4 border-[#0085ff] text-[#0085ff] text-lg rounded p-4 transition-transform duration-300 hover:scale-105 hover:font-semibold hover:bg-[#0085ff] hover:text-white">
+        BUILD A SELF-SUSTAINING NETWORK OF<br>BRILLIANT MINDS IN COMPUTING
+      </div>
+      <div class="box border-4 border-[#09ad00] text-[#09ad00] text-lg rounded p-4 transition-transform duration-300 hover:scale-105 hover:font-semibold hover:bg-[#09ad00] hover:text-white">
+        AMPLIFY THE IMPACT OF YOUNG<br>INDIVIDUAL INNOVATORS IN TECHNOLOGY
+      </div>
+      <div class="box border-4 border-[#f9ac00] text-[#f9ac00] text-lg rounded p-4 transition-transform duration-300 hover:scale-105 hover:font-semibold hover:bg-[#f9ac00] hover:text-white">
+        ADDRESS PRESSING SOCIAL, ECONOMIC AND ENVIRONMENTAL<br>CHALLENGES THROUGH TECHNOLOGICAL INNOVATION
+      </div>
+      <div class="box border-4 border-[#d30033] text-[#d30033] text-lg rounded p-4 transition-transform duration-300 hover:scale-105 hover:font-semibold hover:bg-[#d30033] hover:text-white">
+        UPHOLD ETHICAL STANDARDS BY PROMOTING<br>MORALLY GROUNDED ADVANCES IN COMPUTING.
+      </div>
+    </div>
+  </section>
+
+  <hr id="founders" class="w-[500px] h-px bg-gray-300 border-none rounded mx-auto my-6 fade-section">
+
+  <!-- Founders Section -->
+  <section class="flex flex-col items-center justify-center my-12 max-w-[1366px] mx-auto fade-section">
+    <h3 class="text-3xl font-normal mb-5">OUR FOUNDERS</h3>
+    <div class="flex flex-row justify-center items-start gap-16 mt-24 max-lg:flex-col max-lg:gap-8 max-lg:items-center">
+      <!-- Founder 1 -->
+      <div class="flex flex-col items-center gap-4">
+        <div class="w-1/2 aspect-square rounded-full overflow-hidden flex items-center justify-center bg-white">
+          <img src="founder-left.png" alt="Dr. Ayan Kumar Panja" class="w-full h-full object-cover rounded-full">
+        </div>
+        <div class="text-2xl font-normal text-center">Dr. Ayan Kumar Panja</div>
+        <div class="text-lg text-gray-600">Treasurer</div>
+        <div class="text-base text-gray-700 text-justify max-w-[300px] leading-relaxed">
+          Dr. Ayan Kumar Panja contributes in the areas of smart sensing, indoor-outdoor localization, and wireless systems. His research explores context-aware computing and edge-based learning systems.
+        </div>
+      </div>
+
+      <!-- Founder 2 -->
+      <div class="flex flex-col items-center gap-4">
+        <div class="w-1/2 aspect-square rounded-full overflow-hidden flex items-center justify-center bg-white">
+          <img src="founder-middle.png" alt="Dr. Swarnendu Ghosh" class="w-full h-full object-cover rounded-full">
+        </div>
+        <div class="text-2xl font-normal text-center">Dr. Swarnendu Ghosh</div>
+        <div class="text-lg text-gray-600">President</div>
+        <div class="text-base text-gray-700 text-justify max-w-[300px] leading-relaxed">
+          Dr. Swarnendu Ghosh specializes in computer vision, deep learning, and generative AI. His scholarly contributions range from neural architectures and image segmentation to graph-based representation learning.
+        </div>
+      </div>
+
+      <!-- Founder 3 -->
+      <div class="flex flex-col items-center gap-4">
+        <div class="w-1/2 aspect-square rounded-full overflow-hidden flex items-center justify-center bg-white">
+          <img src="founder-right.png" alt="Dr. Deepsubhra Guha Roy" class="w-full h-full object-cover rounded-full">
+        </div>
+        <div class="text-2xl font-normal text-center">Dr. Deepsubhra Guha Roy</div>
+        <div class="text-lg text-gray-600">Secretary</div>
+        <div class="text-base text-gray-700 text-justify max-w-[300px] leading-relaxed">
+          Dr. Deepsubhra Guha Roy brings deep expertise in mobile cloud computing, federated learning, and IoT systems. His work focuses on integrating intelligent orchestration with secure, scalable digital infrastructures.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-distributed">
+
+			<div class="footer-left">
+
+				<h3>Company<span>logo</span></h3>
+
+				<p class="footer-links">
+					<a href="#" class="link-1">Home</a>
+					
+					<a href="#">Blog</a>
+				
+					<a href="#">Pricing</a>
+				
+					<a href="#">About</a>
+					
+					<a href="#">Faq</a>
+					
+					<a href="#">Contact</a>
+				</p>
+
+				<p class="footer-company-name">Company Name © 2015</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+1.555.555.5555</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@company.com">support@company.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About the company</span>
+					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+				</p>
+
+				<div class="footer-icons">
+
+					<a href="#"><i class="fa-brands fa-facebook"></i></a>
+					<a href="#"><i class="fa-brands fa-twitter"></i></a>
+					<a href="#"><i class="fa-brands fa-linkedin"></i></a>
+					<a href="#"><i class="fa-brands fa-github"></i></a>
+
+				</div>
+
+			</div>
+
+		</footer>
+
+  <!-- JS Interactivity -->
+  <script>
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Scroll-triggered fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.fade-section').forEach((section) => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
