@@ -60,13 +60,13 @@ html { scroll-behavior: smooth; }
 .hero-right img {width:80%; height:auto; }
 
 /* Vision */ 
-.vision { height:30vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-left: 5%; padding-right: 5%;}
+.vision { height:40vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding-left: 5%; padding-right: 5%;}
 .vision h3 { font-size: min(2rem,3vw); font-weight: 400; margin-bottom: 1rem; } 
 .vision p { font-size: min(1rem, 1.5vw); color: #666; line-height: 1.6; width: 80vw; text-align: justify; transition-duration: 0.3s; text-align: center; }
 .vision p:hover {color: black; scale:1.1; transition-duration: 0.3s;}
 
 /* Mission */ 
-.mission { height:70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5vh;} 
+.mission { height:40vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 5vh;} 
 .mission h3 { font-size: min(2rem, 3vw); font-weight: 400; margin-bottom: 1rem; } 
 .mission p { font-size: min(1rem, 1.5vw); color: #666; line-height: 1.6; max-width: 1024px; } 
 .mission div { display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 5vw; width: 70vw; height:15vh;} 
