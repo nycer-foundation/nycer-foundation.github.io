@@ -9,12 +9,16 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body { font-family: 'Montserrat', sans-serif; }
+    body { font-family: 'Montserrat', Arial, Helvetica, sans-serif; }
     .nycer-n { color: #0085ff; }
     .nycer-y { color: #111; }
     .nycer-c { color: #09ad00; }
     .nycer-e { color: #f9ac00; }
     .nycer-r { color: #d30033; }
+
+    /* Navbar */
+
+
 
     
 
@@ -46,7 +50,7 @@
 }
 
 .footer-distributed{
-	background: #666;
+	background: #000;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	width: 100%;
@@ -65,15 +69,13 @@
 /* Footer left */
 
 .footer-distributed .footer-left{
-	width: 40%;
+	width: 30%;
 }
 
 /* The company logo */
 
-.footer-distributed h3{
-	color:  #ffffff;
-	font: normal 36px 'Open Sans', cursive;
-	margin: 0;
+.footer-distributed img.footer-logo{
+  width: 30%;
 }
 
 .footer-distributed h3 span{
@@ -97,7 +99,7 @@
 }
 
 .footer-distributed .footer-company-name{
-	color:  #222;
+	color:  #ffffff;
 	font-size: 14px;
 	font-weight: normal;
 	margin: 0;
@@ -246,23 +248,23 @@
   <!-- Navbar -->
   <div class="sticky top-0 w-screen border-b shadow-md bg-white z-50 fade-section">
     <ul class="flex justify-center items-center gap-10 h-[60px]">
-      <li><a href="#hero" class="text-lg font-medium px-3 py-2 hover:font-bold hover:text-[#0085ff]">Home</a></li>
-      <li><a href="#vision" class="text-lg font-medium px-3 py-2 hover:font-bold">What is 
+      <li><a href="#hero" class="text-lg font-semibold px-3 py-2 hover:font-bold hover:text-[#0085ff] transition-transform duration-300 hover:scale-105">Home</a></li>
+      <li><a href="#vision" class="text-lg font-semibold px-3 py-2 hover:font-bold">What is 
         <span class="font-bold tracking-wider">
           <span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span>
         </span></a>
       </li>
-      <li><a href="#founders" class="text-lg font-medium px-3 py-2 hover:font-bold hover:text-[#09ad00]">Meet our members</a></li>
-      <li><a href="#" class="text-lg font-medium px-3 py-2 hover:font-bold hover:text-[#f9ac00]">What are we upto</a></li>
-      <li><a href="#" class="text-lg font-medium px-3 py-2 hover:font-bold hover:text-[#d30033]">Get in touch</a></li>
+      <li><a href="#founders" class="text-lg font-semibold px-3 py-2 hover:font-bold hover:text-[#09ad00]">Meet our members</a></li>
+      <li><a href="#" class="text-lg font-semibold px-3 py-2 hover:font-bold hover:text-[#f9ac00]">What are we upto</a></li>
+      <li><a href="#" class="text-lg font-semibold px-3 py-2 hover:font-bold hover:text-[#d30033]">Get in touch</a></li>
     </ul>
   </div>
 
   <!-- Hero Section -->
   <section id="hero" class="flex flex-row items-center justify-between gap-12 min-h-[350px] my-12 max-w-[1366px] mx-auto px-6 fade-section">
     <div class="flex flex-col justify-center gap-6 flex-1">
-      <h2 class="text-3xl font-normal">Connecting<br>Brilliance, Passion & Purpose</h2>
-      <p class="text-lg text-gray-600 leading-relaxed">
+      <h2 class="text-3xl font-semibold">Connecting<br>Brilliance, Passion & Purpose</h2>
+      <p class="text-xl text-gray-600 leading-relaxed">
         The <span class="font-bold tracking-wider"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation is a non-profit body composed of a group of young researchers from the various computer science and engineering domain to promote collaborative interdisciplinary research and development.
       </p>
       <button class="text-xl px-16 py-6 bg-[#0085ff] text-white rounded-xl hover:bg-[#005fa3]">JOIN TODAY</button>
@@ -348,45 +350,44 @@
     </div>
   </section>
 
-  <!-- Footer -->
+    <!-- Footer -->
   <footer class="footer-distributed">
 
 			<div class="footer-left">
 
-				<h3>Company<span>logo</span></h3>
+				<h3><img src="logo white.png" alt="NYCER Logo" class="footer-logo"></h3>
 
-				<p class="footer-links">
+				<!--<p class="footer-links">
 					<a href="#" class="link-1">Home</a>
 					
 					<a href="#">Blog</a>
 				
-					<a href="#">Pricing</a>
-				
 					<a href="#">About</a>
+          <a href="#">Members</a>
 					
 					<a href="#">Faq</a>
 					
 					<a href="#">Contact</a>
-				</p>
+				</p> -->
 
-				<p class="footer-company-name">Company Name © 2015</p>
+				<p class="footer-company-name">NYCER Foundation © 2015</p>
 			</div>
 
 			<div class="footer-center">
 
 				<div>
 					<i class="fa fa-map-marker"></i>
-					<p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+					<p>B3, Block 3, Airport City Phase 2,<br>BH 40/1 Jessore Road,<br>Kolkata 700081, West Bengal, India</p>
 				</div>
 
 				<div>
 					<i class="fa fa-phone"></i>
-					<p>+1.555.555.5555</p>
+					<p>+ 91 7059114483</p>
 				</div>
 
 				<div>
 					<i class="fa fa-envelope"></i>
-					<p><a href="mailto:support@company.com">support@company.com</a></p>
+					<p><a href="mailto:nycer-foundation@gmail.com">nycer-foundation@gmail.com</a></p>
 				</div>
 
 			</div>
@@ -395,12 +396,12 @@
 
 				<p class="footer-company-about">
 					<span>About the company</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+					The NYCER Foundation is a non-profit body
 				</p>
 
 				<div class="footer-icons">
 
-					<a href="#"><i class="fa-brands fa-facebook"></i></a>
+					<a href="https://www.facebook.com/profile.php?id=61579368281307"><i class="fa-brands fa-facebook"></i></a>
 					<a href="#"><i class="fa-brands fa-twitter"></i></a>
 					<a href="#"><i class="fa-brands fa-linkedin"></i></a>
 					<a href="#"><i class="fa-brands fa-github"></i></a>
