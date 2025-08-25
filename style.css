@@ -117,17 +117,37 @@ h3{font-size: 1.3vw;font-weight: lighter; margin:0px;}
 .founder .description{font-size: 0.8vw; color: #333; text-align: justify;}
 .founders img{max-width: 10vw; height: auto; border-radius: 50%;}
 
-.members .container{width:70vw; background-color: #ddd; height: 60vh; overflow-y: scroll; margin: 0 auto; padding: 1vh 1vw; box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2); border-radius: 10px;}
-.members .grid{display:grid; grid-template-rows: repeat(auto, 1fr); gap: 1vh; padding: 1vh 1vw;}
-.members .grid .items{height:auto; display:flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 2vw; background-color: #fff; padding: 2vh 2vw; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);}
-.members .grid .items img{height:15vh; width:auto; border-radius: 50%;}
-.members .grid .items .details {display: flex; flex-direction: column; justify-content: center; align-items: flex-start; text-align:left;}
-.members .grid .items .details .name{font-size: 1.5vw; font-weight:bold;}
-.members .grid .items .details .role{font-style: italic; color:#666; font-weight:lighter;}
-.members .grid .items .details .designation{font-size:1.2vw; font-weight:600; color:#333;}
-.members .grid .items .details .description{font-size:1vw; color:#666; text-align: justify;}
+.members a{color:black; text-decoration: none;}
+.members a:focus{color:black; text-decoration: none;}
 
+.advisors .container{width:70vw; background-color: #ddd; height: 60vh; overflow-y: scroll; margin: 0 auto; padding: 1vh 1vw; box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2); border-radius: 10px;}
+.advisors .grid{display:grid; grid-template-rows: repeat(auto, 1fr); gap: 1vh; padding: 1vh 1vw;}
+.advisors .grid .items{height:auto; display:flex; flex-direction: row; justify-content: flex-start; align-items: center; gap: 2vw; background-color: #fff; padding: 2vh 2vw; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);}
+.advisors .grid .items img{height:15vh; width:auto; border-radius: 50%;}
+.advisors .grid .items .details {display: flex; flex-direction: column; justify-content: center; align-items: flex-start; text-align:left;}
+.advisors .grid .items .details .name{font-size: 1.5vw; font-weight:bold;}
+.advisors .grid .items .details .role{font-style: italic; color:#666; font-weight:lighter;}
+.advisors .grid .items .details .designation{font-size:1.2vw; font-weight:600; color:#333;}
+.advisors .grid .items .details .description{font-size:1vw; color:#666; text-align: justify;}
 
+.seniors .container { width: 70vw; background-color: #ddd; height: 60vh; overflow-y: scroll; margin: 0 auto; padding: 1vh 1vw; box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2); border-radius: 10px; }
+.seniors .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2vw 1vh; padding: 1vh 1vw; box-sizing: border-box; }
+.seniors .grid .items { display: flex; flex-direction: column; justify-content: flex-start; align-items: center; gap: 2vw; background-color: #fff; padding: 2vh 2vw; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box; }
+.seniors .grid .items img { height: 10vh; width: auto; border-radius: 50%; }
+.seniors .grid .items .details { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.seniors .grid .items .details .name { font-size: 1.2vw; font-weight: bold; }
+.seniors .grid .items .details .designation { font-size: 1vw; font-weight: 600; color: #555; }
+.seniors .grid .items .details .description { font-size: 0.8vw; color: #666; text-align: justify; }
+.seniors .grid .items .details .interests { font-size: 0.8vw; color: #444; text-align: center; }
+
+.juniors .container { width: 70vw; background-color: #ddd; height: 60vh; overflow-y: scroll; margin: 0 auto; padding: 1vh 1vw; box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.2); border-radius: 10px; }
+.juniors .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2vw 1vh; padding: 1vh 1vw; box-sizing: border-box; }
+.juniors .grid .items { display: flex; flex-direction: column; justify-content: flex-start; align-items: center; gap: 2vw; background-color: #fff; padding: 2vh 2vw; border-radius: 5px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box; }
+.juniors .grid .items img { height: 10vh; width: auto; border-radius: 50%; }
+.juniors .grid .items .details { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+.juniors .grid .items .details .name { font-size: 1vw; font-weight: bold; }
+.juniors .grid .items .details .designation { font-size: 0.8vw; font-weight: 600; color: #555; }
+.juniors .grid .items .details .interests { font-size: 0.6vw; color: #444; text-align: center; }
 
 .footer section { width: 100%; display: inline-block; background: #000; height: 50vh; text-align: center; font-size: 30px; font-weight: 700; text-decoration: underline; }
 .footer-distributed{background:#000;box-shadow:0 1px 1px 0 rgba(0,0,0,0.12);box-sizing:border-box;width:100%;text-align:left;font:bold 16px sans-serif;padding:55px 50px;}
