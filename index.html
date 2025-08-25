@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="landing"></div>
   <header class="landing-container">
     <div class="header">
       <div class="header-logo">
@@ -32,12 +33,11 @@
     </header>
 
   <div id="hero"></div>
-  
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-left">
       <h2>Connecting<br>Brilliance, Passion &amp; Purpose</h2>
-      <p>The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation is a non-profit body composed of a group of young researchers from the various computer science and engineering domain to promote collaborative interdisciplinary research and development.</p>
+      <h3>The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation is a non-profit body composed of a group of young researchers from the various computer science and engineering domain to promote collaborative interdisciplinary research and development.</p>
       <button>JOIN TODAY</button>
     </div>
     <div class="hero-right">
@@ -72,37 +72,45 @@
   <section class="founders">
     <h3>OUR FOUNDERS</h3>
     <div class="founders-list">
-      <div class="founder">
-        <div class="founder-img">
-          <img src="founder-left.png" alt="Dr. Ayan Kumar Panja">
-        </div>
-        <div>
-        <div class="founder-name">Dr. Ayan Kumar Panja</div>
-        <div class="founder-designation">Treasurer</div>
-        <div class="founder-description">Dr. Ayan Kumar Panja contributes in the areas of smart sensing, indoor-outdoor localization, and wireless systems. His research explores context-aware computing and edge-based learning systems.</div>
-        </div>
-      </div>
-      <div class="founder">
-        <div class="founder-img">
-          <img src="founder-middle.png" alt="Dr. Swarnendu Ghosh">
-        </div>
-        <div>
-          <div class="founder-name">Dr. Swarnendu Ghosh</div>
-          <div class="founder-designation">President</div>
-          <div class="founder-description">Dr. Swarnendu Ghosh specializes in computer vision, deep learning, and generative AI. His scholarly contributions range from neural architectures and image segmentation to graph-based representation learning.</div>
-        </div>
-      </div>
 
-      <div class="founder">
-        <div class="founder-img">
-          <img src="founder-right.png" alt="Dr. Deepsubhra Guha Roy">
+      <a href="https://www.linkedin.com/in/ayan-panja-45889bb7/">
+        <div class="founder" >
+          <div class="founder-img">
+            <img src="founder-left.png" alt="Dr. Ayan Kumar Panja">
+          </div>
+          <div>
+            <div class="founder-name">Dr. Ayan Kumar Panja</div>
+            <div class="founder-designation">Treasurer</div>
+            <div class="founder-description">Dr. Ayan Kumar Panja contributes in the areas of smart sensing, indoor-outdoor localization, and wireless systems. His research explores context-aware computing and edge-based learning systems.</div>
+          </div>
         </div>
-        <div>
-        <div class="founder-name">Dr. Deepsubhra Guha Roy</div>
-        <div class="founder-designation">Secretary</div>
-        <div class="founder-description">Dr. Deepsubhra Guha Roy brings deep expertise in mobile cloud computing, federated learning, and IoT systems. His work focuses on integrating intelligent orchestration with secure, scalable digital infrastructures.</div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/dr-swarnendu-ghosh-a6a042237/">
+        <div class="founder">
+          <div class="founder-img">
+            <img src="founder-middle.png" alt="Dr. Swarnendu Ghosh">
+          </div>
+          <div>
+            <div class="founder-name">Dr. Swarnendu Ghosh</div>
+            <div class="founder-designation">President</div>
+            <div class="founder-description">Dr. Swarnendu Ghosh specializes in computer vision, deep learning, and generative AI. His scholarly contributions range from neural architectures and image segmentation to graph-based representation learning.</div>
+          </div>
         </div>
-      </div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/deepsubhra-guha-roy-phd-18787a124/">
+        <div class="founder">
+          <div class="founder-img">
+            <img src="founder-right.png" alt="Dr. Deepsubhra Guha Roy">
+          </div>
+          <div>
+            <div class="founder-name">Dr. Deepsubhra Guha Roy</div>
+            <div class="founder-designation">Secretary</div>
+            <div class="founder-description">Dr. Deepsubhra Guha Roy brings deep expertise in mobile cloud computing, federated learning, and IoT systems. His work focuses on integrating intelligent orchestration with secure, scalable digital infrastructures.</div>
+          </div>
+        </div>
+      </a>
     </div>
   </section>
 
@@ -114,7 +122,7 @@
     <div class="footer-center">
       <div>
         <i class="fa fa-map-marker"></i>
-        <p>B3, Block 3, Airport City Phase 2,<br>BH 40/1 Jessore Road,<br>Kolkata 700081, West Bengal, India</p>
+        <p> B3, Block 3, Airport City Phase 2,<br>BH 40/1 Jessore Road,<br>Kolkata 700081, West Bengal, India</p>
       </div>
       <div>
         <i class="fa fa-phone"></i>
@@ -132,11 +140,25 @@
       </p>
       <div class="footer-icons">
         <a href="https://www.facebook.com/profile.php?id=61579368281307"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="https://x.com/NycerFoundation"><i class="fa-brands fa-x"></i></a>
+        <a href="https://www.linkedin.com/company/nycer-foundation/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/nycer-foundation"><i class="fa-brands fa-github"></i></a>
       </div>
     </div>
   </footer>
+
+  <script>
+document.querySelectorAll('.navbar a[href^="#"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href').slice(1);
+    const target = document.getElementById(targetId);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({behavior: "smooth"});
+      this.focus(); // Restore focus to the link
+    }
+  });
+});
+</script>
 </body>
 </html>
