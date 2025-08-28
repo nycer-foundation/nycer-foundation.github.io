@@ -80,8 +80,8 @@ h3{font-size: 1.3vw;font-weight: lighter; margin:0px;}
 .navbar li:nth-child(4) a:focus { text-decoration-color: var(--brand-yellow);} 
 .navbar li:nth-child(5) a:focus { text-decoration-color: var(--brand-red);}
 
-.hero-section{width:70vw; display:flex; justify-content: center; align-items: center; margin:5vh;}
-.hero-left{flex:1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding:5vh}
+.hero-section{width:70vw; display:flex; justify-content: center; align-items: center; margin:5vh auto;}
+.hero-left{flex:1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding:5vh}
 .hero-left h2{padding: 5vh 0px;}
 .hero-left button {font-size: 1.3vw; background-color: #000; color: white; border: none; border-radius: 5px; padding: 3vh 3vw; cursor: pointer; transition: 0.3s ease; margin-top: 1vh }
 .hero-left button:hover { background-color: var(--brand-blue); font-weight:bolder; }

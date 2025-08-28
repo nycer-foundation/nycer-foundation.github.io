@@ -3,13 +3,89 @@
 
 <head>
   <style>
-    .nycer-n { color: #0085ff; }
-    .nycer-y { color: #111; }
-    .nycer-c { color: #09ad00; }
-    .nycer-e { color: #f9ac00; }
-    .nycer-r { color: #d30033; }
+    /* NYCER brand colors and helper utilities to override Tailwind color utilities */
+    :root{
+      --nycer-blue: #0085ff;
+      --nycer-blue-dark: #006cd6; /* slightly darker for hover */
+      --nycer-dark: #000000;
+      --nycer-green: #09ad00;
+      --nycer-yellow: #f9ac00;
+      --nycer-red: #d30033;
+    }
+    .nycer-n { color: var(--nycer-blue); }
+    .nycer-y { color: var(--nycer-dark); }
+    .nycer-c { color: var(--nycer-green); }
+    .nycer-e { color: var(--nycer-yellow); }
+    .nycer-r { color: var(--nycer-red); }
     .nycer-brand { font-weight: bold; letter-spacing: 0.04em; font-family: inherit; }
+
+    /* Text color overrides */
+    .text-blue-600, .text-blue-700, .text-blue-300, .text-blue-800 { color: var(--nycer-blue) !important; }
+    .text-green-600, .text-green-700 { color: var(--nycer-green) !important; }
+    .text-yellow-600, .text-yellow-700, .text-yellow-500 { color: var(--nycer-yellow) !important; }
+    .text-red-600, .text-red-700 { color: var(--nycer-red) !important; }
+
+    /* Background overrides */
+  .bg-blue-600 { background-color: var(--nycer-blue) !important; }
+  /* darker bg for hover states */
+  .bg-blue-700, .hover\:bg-blue-700:hover { background-color: var(--nycer-blue-dark) !important; }
+    .bg-green-500, .bg-green-600 { background-color: var(--nycer-green) !important; }
+    .bg-yellow-500, .bg-yellow-600 { background-color: var(--nycer-yellow) !important; }
+    .bg-red-500, .bg-red-600 { background-color: var(--nycer-red) !important; }
+
+    /* Lighter background variants (approximate) */
+  .bg-blue-50 { background-color: rgba(0,133,255,0.06) !important; }
+  .bg-blue-100 { background-color: rgba(0,133,255,0.12) !important; }
+  .bg-blue-500 { background-color: var(--nycer-blue) !important; }
+  .bg-green-50 { background-color: rgba(9,173,0,0.06) !important; }
+  .bg-green-100 { background-color: rgba(9,173,0,0.12) !important; }
+  .bg-yellow-50 { background-color: rgba(249,172,0,0.06) !important; }
+  .bg-yellow-100 { background-color: rgba(249,172,0,0.12) !important; }
+  .bg-red-50 { background-color: rgba(211,0,51,0.06) !important; }
+  .bg-red-100 { background-color: rgba(211,0,51,0.12) !important; }
+
+  /* Hover-prefixed background utilities (Tailwind generates classes like hover:bg-blue-50) */
+  .hover\:bg-blue-50:hover { background-color: rgba(0,133,255,0.06) !important; }
+  .hover\:bg-blue-100:hover { background-color: rgba(0,133,255,0.12) !important; }
+  .hover\:bg-blue-500:hover { background-color: rgba(0,133,255,0.9) !important; }
+  .hover\:bg-green-50:hover { background-color: rgba(9,173,0,0.06) !important; }
+  .hover\:bg-green-100:hover { background-color: rgba(9,173,0,0.12) !important; }
+  .hover\:bg-yellow-50:hover { background-color: rgba(249,172,0,0.06) !important; }
+  .hover\:bg-yellow-100:hover { background-color: rgba(249,172,0,0.12) !important; }
+  .hover\:bg-red-50:hover { background-color: rgba(211,0,51,0.06) !important; }
+  .hover\:bg-red-100:hover { background-color: rgba(211,0,51,0.12) !important; }
+
+  /* hover:bg-blue-600 -> darker brand blue */
+  .hover\:bg-blue-600:hover { background-color: var(--nycer-blue-dark) !important; }
+
+  /* Smooth transitions for mission boxes (background, color) */
+  .mission-box { transition: background-color .18s ease, color .18s ease, transform .18s ease; }
+
+    /* Border overrides */
+    .border-blue-500, .border-blue-600 { border-color: var(--nycer-blue) !important; }
+    .border-green-500, .border-green-600 { border-color: var(--nycer-green) !important; }
+    .border-yellow-500, .border-yellow-600 { border-color: var(--nycer-yellow) !important; }
+    .border-red-500, .border-red-600 { border-color: var(--nycer-red) !important; }
+
+    /* Hover state helpers (escape colons to match Tailwind-generated classes) */
+  /* Hover helpers for nav/dropdown/button states */
+  .hover\:text-blue-600:hover, .hover\:text-blue-400:hover, .hover\:text-blue-300:hover { color: var(--nycer-blue) !important; }
+  .hover\:text-green-600:hover { color: var(--nycer-green) !important; }
+  .hover\:text-yellow-500:hover, .hover\:text-yellow-600:hover { color: var(--nycer-yellow) !important; }
+  .hover\:text-red-600:hover, .hover\:text-red-700:hover { color: var(--nycer-red) !important; }
+
+  .hover\:bg-green-500:hover { background-color: rgba(9,173,0,0.9) !important; }
+  .hover\:bg-yellow-500:hover { background-color: rgba(249,172,0,0.9) !important; }
+  .hover\:bg-red-500:hover { background-color: rgba(211,0,51,0.9) !important; }
+
+    /* Small link/text variants used in footer */
+    .text-blue-300 { color: var(--nycer-blue) !important; }
+    .hover\:text-blue-400:hover { color: var(--nycer-blue) !important; }
+    
+  /* Make mission boxes text white on hover for readability */
+  .mission-box:hover { color: #ffffff !important; }
   </style>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NYCER Foundation</title>
@@ -20,28 +96,41 @@
 </head>
 
 <body>
+  <!-- Main Content -->
+  <main class="snap-y snap-mandatory h-screen overflow-y-scroll">
 
+  <!-- Landing Page (Desktop/Tablet only) -->
+  <section id="landing" class="hidden md:flex flex-col items-center justify-center min-h-screen bg-white snap-start px-4 py-12 relative">
+      <img src="logo-image.png" alt="NYCER Logo" class="h-60 w-auto">
+      <h1 class="text-5xl font-bold mb-4">NYCER</span> Foundation</h1>
+      <h2 class="text-2xl font-semibold text-gray-700 mb-8">Nexus of Young Computer Engineers &amp; Researchers</h2>
+  <button onclick="document.getElementById('hero').scrollIntoView({behavior: 'smooth'})" class="absolute bottom-10 left-1/2 -translate-x-1/2 bg-white text-black rounded-full p-4 transition transform hover:scale-105 flex flex-col items-center animate-bounce hover:bg-blue-600 hover:text-white group">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+          <span class="sr-only">Scroll Down</span>
+        </button>
+    </section>
   <!-- Navbar -->
   <nav class="w-full bg-white shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4">
       <div class="flex justify-between h-20 items-center">
         <a href="#hero" class="flex items-center space-x-2">
-          <img src="logo-image.png" alt="NYCER Logo" class="h-14 w-auto">
-          <span class="font-bold text-2xl"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span> Foundation</span>
+          <img src="logo-image.png" alt="NYCER Logo" class="h-20 w-auto">
         </a>
         <ul class="hidden md:flex space-x-8 text-lg font-medium">
           <li><a href="#hero" class="hover:text-blue-600 transition-colors">Home</a></li>
           <li><a href="#about" class="hover:text-black transition-colors">About <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span></a></li>
           <li class="relative group">
-            <a href="#founders" class="hover:text-green-600 transition-colors flex items-center">The Team <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></a>
-            <ul class="absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto transition-opacity z-50">
+            <a href="#founders" class="hover:text-green-600 transition-colors flex items-center">The Team <!-- <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>--></a> 
+            <!-- <ul class="absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto transition-opacity z-50">
               <li><a href="#founders" class="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600">Founders</a></li>
               <li><a href="#advisors" class="block px-4 py-2 hover:bg-green-50 hover:text-green-600">Advisors</a></li>
               <li><a href="#seniors" class="block px-4 py-2 hover:bg-yellow-50 hover:text-yellow-600">Senior Members</a></li>
               <li><a href="#juniors" class="block px-4 py-2 hover:bg-red-50 hover:text-red-600">Junior Members</a></li>
-            </ul>
+            </ul> -->
           </li>
-          <li><a href="#" class="hover:text-yellow-500 transition-colors">Activities</a></li>
+          <!-- <li><a href="#" class="hover:text-yellow-500 transition-colors">Activities</a></li> -->
           <li><a href="#footer" class="hover:text-red-600 transition-colors">Contact Us</a></li>
         </ul>
         <!-- Mobile menu button -->
@@ -55,88 +144,75 @@
       <ul id="mobile-menu" class="md:hidden hidden flex-col space-y-2 mt-2 text-lg font-medium">
         <li><a href="#hero" class="block py-2 px-4 hover:text-blue-600">Home</a></li>
         <li><a href="#about" class="block py-2 px-4 hover:text-black">About <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span></a></li>
-        <li><a href="#founders" class="block py-2 px-4 hover:text-green-600">Founders</a></li>
+        <!-- <li><a href="#founders" class="block py-2 px-4 hover:text-green-600">Founders</a></li>
         <li><a href="#advisors" class="block py-2 px-4 hover:text-green-600">Advisors</a></li>
         <li><a href="#seniors" class="block py-2 px-4 hover:text-yellow-600">Senior Members</a></li>
         <li><a href="#juniors" class="block py-2 px-4 hover:text-red-600">Junior Members</a></li>
-        <li><a href="#" class="block py-2 px-4 hover:text-yellow-500">Activities</a></li>
+        <li><a href="#" class="block py-2 px-4 hover:text-yellow-500">Activities</a></li> -->
         <li><a href="#footer" class="block py-2 px-4 hover:text-red-600">Contact Us</a></li>
       </ul>
     </div>
   </nav>
-
-
-  <!-- Main Content -->
-  <main class="snap-y snap-mandatory h-screen overflow-y-scroll">
-    <!-- Landing Page (Desktop/Tablet only) -->
-    <section id="landing" class="hidden md:flex flex-col items-center justify-center min-h-screen bg-white snap-start px-4 py-12 relative">
-      <img src="logo-image.png" alt="NYCER Logo" class="h-40 w-auto mb-8">
-      <h1 class="text-5xl font-bold mb-4"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span> Foundation</h1>
-      <h2 class="text-2xl font-semibold text-gray-700 mb-2">Nexus of Young Computer Engineers &amp; Researchers</h2>
-    <button onclick="document.getElementById('hero').scrollIntoView({behavior: 'smooth'})" class="absolute bottom-10 left-1/2 -translate-x-1/2 bg-white text-black rounded-full p-4 transition flex flex-col items-center animate-bounce hover:bg-blue-600 hover:text-white group">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
-          </svg>
-          <span class="sr-only">Scroll Down</span>
-        </button>
-    </section>
-    
-    <section id="hero" class="flex flex-col md:flex-row items-center justify-center min-h-screen bg-white snap-start px-4 py-12">
-      <div class="flex-1 flex flex-col items-start md:items-start space-y-6">
+    <section id="hero" class="flex flex-col md:flex-row items-center justify-center min-h-screen bg-white snap-start px-4 py-12 max-w-7xl mx-auto">
+      <div class="flex-1 flex flex-col items-center md:items-start space-y-6 px-16">
         <!-- Only show on mobile: Title and subtitle -->
-        <h1 class="text-4xl font-bold text-blue-600 md:hidden">NYCER Foundation</h1>
-        <h2 class="text-2xl font-semibold text-gray-800 md:hidden">Nexus of Young Computer Engineers &amp; Researchers</h2>
-        <!-- Main tagline for all screens -->
-        <h3 class="text-2xl md:text-5xl text-gray-800 font-bold max-w-xl">Connecting Brilliance, Passion &amp; Purpose.</h3>
-        <p class="text-base md:text-lg text-gray-600 max-w-xl">The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation is a non-profit body composed of a group of young researchers from the various computer science and engineering domain to promote collaborative interdisciplinary research and development.</p>
-        <a href="#about" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition font-bold">JOIN TODAY</a>
+        <!-- <h1 class="text-4xl font-bold text-black-400 md:hidden mt-20 text-center">NYCER Foundation</h1> -->
+        <h2 class="text-2xl font-semibold text-gray-800 md:hidden mt-20 text-center">Nexus of Young Computer Engineers &amp; Researchers</h2>
+  <!-- Main tagline for all screens -->
+  <h3 class="text-2xl md:text-3xl text-gray-800 font-bold max-w-xl text-center md:text-left">Connecting <br> Brilliance, Passion &amp; Purpose.</h3>
+  <p class="text-base md:text-lg text-gray-800 max-w-xl text-center md:text-left">The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation is a non-profit body composed of a group of young researchers from the various computer science and engineering domain to promote collaborative interdisciplinary research and development.</p>
+  <a href="#about" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition transform hover:scale-105 duration-200 ease-out font-bold text-center">JOIN TODAY</a>
       </div>
-      <div class="flex-1 flex justify-center items-center mt-8 md:mt-0">
+      <div class="flex-1 flex justify-center md:justify-end items-center mt-8 md:mt-00 px-16">
     <img src="hero-image.png" alt="Hero Illustration" class="w-72 md:w-96 rounded-xl">
       </div>
     </section>
 
-
     <section id="about" class="flex flex-col items-center justify-center min-h-screen bg-white snap-start px-4 py-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">OUR VISION</h2>
-      <p class="text-lg md:text-2xl text-gray-600 max-w-2xl text-center mb-8">The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation exists to empower young minds in computer science by building sustainable collaborative networks that amplify individual impact and drive innovation in socially, economically and environmentally responsible research areas.</p>
-      <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">OUR MISSION</h2>
-      <p class="text-lg md:text-2xl text-gray-600 max-w-2xl text-center mb-8">The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation aims to</p>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
-        <div class="bg-white border-4 border-blue-500 p-4 rounded-lg shadow text-blue-700 font-semibold text-center transition-transform duration-300 hover:scale-105 hover:bg-blue-500 hover:text-white cursor-pointer">BUILD A SELF-SUSTAINING NETWORK OF BRILLIANT MINDS IN COMPUTING</div>
-        <div class="bg-white border-4 border-green-500 p-4 rounded-lg shadow text-green-700 font-semibold text-center transition-transform duration-300 hover:scale-105 hover:bg-green-500 hover:text-white cursor-pointer">AMPLIFY THE IMPACT OF YOUNG INDIVIDUAL INNOVATORS IN TECHNOLOGY</div>
-        <div class="bg-white border-4 border-yellow-500 p-4 rounded-lg shadow text-yellow-700 font-semibold text-center transition-transform duration-300 hover:scale-105 hover:bg-yellow-500 hover:text-white cursor-pointer">ADDRESS PRESSING SOCIAL, ECONOMIC &amp; ENVIRONMENTAL CHALLENGES THROUGH TECHNOLOGICAL INNOVATION</div>
-        <div class="bg-white border-4 border-red-500 p-4 rounded-lg shadow text-red-700 font-semibold text-center transition-transform duration-300 hover:scale-105 hover:bg-red-500 hover:text-white cursor-pointer">UPHOLD ETHICAL STANDARDS BY PROMOTING MORALLY GROUNDED ADVANCES IN COMPUTING</div>
+      <h2 class="text-xl md:text-3xl font-bold text-gray-800 mt-6 mb-6">OUR VISION</h2>
+      <p class="text-base md:text-xl text-gray-600 px-16 text-center mb-8">The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation exists to empower young minds in computer science by building sustainable collaborative networks that amplify individual impact and drive innovation in socially, economically and environmentally responsible research areas.</p>
+      <h2 class="text-xl md:text-3xl font-bold text-gray-800 mt-6 mb-6">OUR MISSION</h2>
+      <p class="text-base md:text-xl text-gray-600 max-w-2xl text-center mb-8">The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation aims to</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-4xl">
+        <div class="mission-box text-sm bg-white border-4 border-blue-500 p-4 rounded-lg shadow text-blue-700 font-semibold text-center flex items-center justify-center transition-transform duration-300 hover:scale-105 hover:bg-blue-500 hover:text-white cursor-pointer">BUILD A SELF-SUSTAINING INTERDISCIPLINARY NETWORK OF BRILLIANT MINDS IN COMPUTING</div>
+        <div class="mission-box text-sm bg-white border-4 border-green-500 p-4 rounded-lg shadow text-green-700 font-semibold text-center flex items-center justify-center transition-transform duration-300 hover:scale-105 hover:bg-green-500 hover:text-white cursor-pointer">AMPLIFY THE IMPACT OF CONTRIBUTIONS BY YOUNG INDIVIDUAL INNOVATORS IN TECHNOLOGY</div>
+        <div class="mission-box text-sm bg-white border-4 border-yellow-500 p-4 rounded-lg shadow text-yellow-700 font-semibold text-center flex items-center justify-center transition-transform duration-300 hover:scale-105 hover:bg-yellow-500 hover:text-white cursor-pointer">ADDRESS PRESSING SOCIO-ECONOMIC CHALLENGES THROUGH SUSTAINABLE TECHNOLOGICAL INNOVATION</div>
+        <div class="mission-box text-sm bg-white border-4 border-red-500 p-4 rounded-lg shadow text-red-700 font-semibold text-center flex items-center justify-center transition-transform duration-300 hover:scale-105 hover:bg-red-500 hover:text-white cursor-pointer">UPHOLD ETHICAL STANDARDS BY PROMOTING MORALLY GROUNDED ADVANCES IN COMPUTING</div>
       </div>
     </section>
-
 
     <section id="founders" class="flex flex-col items-center justify-center min-h-screen bg-gray-50 snap-start px-4 py-12">
-      <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">OUR FOUNDERS</h2>
+      <h2 class="text-xl md:text-3xl font-bold text-gray-800 mb-6">OUR FOUNDERS</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 w-full max-w-6xl founders-list">
-        <a href="https://www.linkedin.com/in/ayan-panja-45889bb7/" class="flex flex-col items-center bg-white p-6 rounded-lg shadow hover:scale-105 transition-transform founder">
-          <img src="images/founders/akp.png" alt="Dr. Ayan Kumar Panja" class="w-32 h-32 rounded-full mb-4">
-          <div class="name text-xl font-semibold">Dr. Ayan Kumar Panja</div>
-          <div class="designation text-blue-600 font-medium mb-2">Treasurer</div>
-          <div class="description text-gray-600 text-center text-sm">Dr. Ayan Kumar Panja contributes in the areas of smart sensing, indoor-outdoor localization, and wireless systems. His research explores context-aware computing and edge-based learning systems.</div>
+        <a href="https://www.linkedin.com/in/ayan-panja-45889bb7/" class="order-3 md:order-1 w-full bg-white p-4 md:p-6 rounded-lg shadow hover:scale-105 transition-transform founder grid grid-cols-4 md:grid-cols-1 gap-4 items-start">
+          <img src="images/founders/akp.png" alt="Dr. Ayan Kumar Panja" class="w-15 h-auto md:w-32 md:h-32 justify-center rounded-full col-span-1 md:mx-auto">
+            <div class="col-span-3 md:col-span-1 flex flex-col justify-center md:mx-auto">
+            <div class="name text-sm md:text-xl font-semibold text-left md:text-center">Dr. Ayan Kumar Panja</div>
+            <div class="designation text-sm md:text-xl text-blue-600 font-medium mb-2 text-left md:text-center">Treasurer</div>
+          </div>
+          <div class="description text-sm col-span-4 md:col-span-1 text-gray-600 text-left md:text-justify text-sm">Dr. Ayan Kumar Panja contributes in the areas of smart sensing, indoor-outdoor localization, and wireless systems. His research explores context-aware computing and edge-based learning systems.</div>
         </a>
-        <a href="https://www.linkedin.com/in/dr-swarnendu-ghosh-a6a042237/" class="flex flex-col items-center bg-white p-6 rounded-lg shadow hover:scale-105 transition-transform founder">
-          <img src="images/founders/swg.png" alt="Dr. Swarnendu Ghosh" class="w-32 h-32 rounded-full mb-4">
-          <div class="name text-xl font-semibold">Dr. Swarnendu Ghosh</div>
-          <div class="designation text-green-600 font-medium mb-2">President</div>
-          <div class="description text-gray-600 text-center text-sm">Dr. Swarnendu Ghosh specializes in computer vision, deep learning, and generative AI. His scholarly contributions range from neural architectures and image segmentation to graph-based representation learning.</div>
+        <a href="https://www.linkedin.com/in/dr-swarnendu-ghosh-a6a042237/" class="order-1 md:order-2 w-full bg-white p-4 md:p-6 rounded-lg shadow hover:scale-105 transition-transform founder grid grid-cols-4 md:grid-cols-1 gap-4 items-start">
+          <img src="images/founders/swg.png" alt="Dr. Swarnendu Ghosh" class="w-15 h-auto md:w-32 md:h-32 rounded-full col-span-1 md:mx-auto">
+            <div class="col-span-3 md:col-span-1 flex flex-col justify-center md:mx-auto">
+            <div class="name text-sm md:text-xl font-semibold text-left md:text-center">Dr. Swarnendu Ghosh</div>
+            <div class="designation text-sm md:text-xl text-green-600 font-medium mb-2 text-left md:text-center">President</div>
+          </div>
+          <div class="description text-sm col-span-4 md:col-span-1 text-gray-600 text-left md:text-justify text-sm">Dr. Swarnendu Ghosh specializes in computer vision, deep learning, and generative AI. His scholarly contributions range from neural architectures and image segmentation to graph-based representation learning.</div>
         </a>
-        <a href="https://www.linkedin.com/in/deepsubhra-guha-roy-phd-18787a124/" class="flex flex-col items-center bg-white p-6 rounded-lg shadow hover:scale-105 transition-transform founder">
-          <img src="images/founders/dgr.png" alt="Dr. Deepsubhra Guha Roy" class="w-32 h-32 rounded-full mb-4">
-          <div class="name text-xl font-semibold">Dr. Deepsubhra Guha Roy</div>
-          <div class="designation text-red-600 font-medium mb-2">Secretary</div>
-          <div class="description text-gray-600 text-center text-sm">Dr. Deepsubhra Guha Roy brings deep expertise in mobile cloud computing, federated learning, and IoT systems. His work focuses on integrating intelligent orchestration with secure, scalable digital infrastructures.</div>
+        <a href="https://www.linkedin.com/in/deepsubhra-guha-roy-phd-18787a124/" class="order-2 md:order-3 w-full bg-white p-4 md:p-6 rounded-lg shadow hover:scale-105 transition-transform founder grid grid-cols-4 md:grid-cols-1 gap-4 items-start">
+          <img src="images/founders/dgr.png" alt="Dr. Deepsubhra Guha Roy" class="w-15 h-auto md:w-32 md:h-32 rounded-full col-span-1 md:mx-auto">
+            <div class="col-span-3 md:col-span-1 flex flex-col justify-center md:mx-auto">
+            <div class="name text-sm md:text-xl font-semibold text-left md:text-center">Dr. Deepsubhra Guha Roy</div>
+            <div class="designation text-sm md:text-xl text-red-600 font-medium mb-2 text-left md:text-center">Secretary</div>
+          </div>
+          <div class="description text-sm col-span-4 md:col-span-1 text-gray-600 text-left md:text-justify text-sm">Dr. Deepsubhra Guha Roy brings deep expertise in mobile cloud computing, federated learning, and IoT systems. His work focuses on integrating intelligent orchestration with secure, scalable digital infrastructures.</div>
         </a>
       </div>
     </section>
-
+    
     <!-- Advisors Section -->
-    <section id="advisors" class="flex flex-col items-center justify-center min-h-screen bg-white snap-start px-4 py-12">
+    <!-- <section id="advisors" class="flex flex-col items-center justify-center min-h-screen bg-white snap-start px-4 py-12">
       <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">OUR ADVISORS</h2>
       <div class="w-full max-w-4xl bg-gray-100 rounded-lg shadow p-6 overflow-x-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -160,9 +236,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- Seniors Section -->
-    <section id="seniors" class="flex flex-col items-center justify-center min-h-screen bg-gray-50 snap-start px-4 py-12">
+    <!-- <section id="seniors" class="flex flex-col items-center justify-center min-h-screen bg-gray-50 snap-start px-4 py-12">
       <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">OUR SENIOR MEMBERS</h2>
       <div class="w-full max-w-5xl bg-white rounded-lg shadow p-6 overflow-x-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -175,8 +251,9 @@
           </a>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- Juniors Section -->
+    <!--
     <section id="juniors" class="flex flex-col items-center justify-center min-h-screen bg-white snap-start px-4 py-12">
       <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">OUR JUNIOR MEMBERS</h2>
       <div class="w-full max-w-5xl bg-gray-50 rounded-lg shadow p-6 overflow-x-auto">
@@ -189,8 +266,7 @@
           </a>
         </div>
       </div>
-    </section>
-
+    </section>-->
   </main>
 
   
@@ -289,7 +365,7 @@
     <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div class="flex items-center space-x-2 mb-4 md:mb-0">
         <img src="logo white.png" alt="NYCER Logo" class="h-14 w-auto">
-        <span class="font-bold text-lg"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span> Foundation</span>
+        <span class="font-bold text-lg">NYCER Foundation</span>
       </div>
       <div class="text-sm text-center md:text-left">
         <div>B3, Block 3, Airport City Phase 2,<br>BH 40/1 Jessore Road,<br>Kolkata 700081, West Bengal, India</div>
@@ -331,6 +407,25 @@
           if(menu) menu.classList.add('opacity-0','pointer-events-none');
         }, 180); // 180ms delay before hiding
       });
+    });
+  </script>
+  <script>
+    // Equalize heights of mission boxes so they're all the same size
+    function equalizeMissionBoxes() {
+      const boxes = Array.from(document.querySelectorAll('.mission-box'));
+      if (!boxes.length) return;
+      // reset
+      boxes.forEach(b => b.style.height = 'auto');
+      // compute max
+      const max = boxes.reduce((m, b) => Math.max(m, b.getBoundingClientRect().height), 0);
+      boxes.forEach(b => b.style.height = Math.ceil(max) + 'px');
+    }
+
+    window.addEventListener('load', equalizeMissionBoxes);
+    window.addEventListener('resize', () => {
+      // debounce resize
+      clearTimeout(window._nycerMissionResize);
+      window._nycerMissionResize = setTimeout(equalizeMissionBoxes, 120);
     });
   </script>
 </body>
