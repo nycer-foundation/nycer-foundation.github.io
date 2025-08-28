@@ -2,139 +2,196 @@
 <html lang="en">
 
 <head>
+  <style>
+    .nycer-n { color: #0085ff; }
+    .nycer-y { color: #111; }
+    .nycer-c { color: #09ad00; }
+    .nycer-e { color: #f9ac00; }
+    .nycer-r { color: #d30033; }
+    .nycer-brand { font-weight: bold; letter-spacing: 0.04em; font-family: inherit; }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NYCER Foundation</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
-  <div id="landing"></div>
-  <header class="landing-container">
-    <div class="header">
-      <div class="header-logo">
-        <img src="logo-image.png" alt="NYCER Logo">
+
+  <!-- Navbar -->
+  <nav class="w-full bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex justify-between h-20 items-center">
+        <a href="#hero" class="flex items-center space-x-2">
+          <img src="logo-image.png" alt="NYCER Logo" class="h-14 w-auto">
+          <span class="font-bold text-2xl"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span> Foundation</span>
+        </a>
+        <ul class="hidden md:flex space-x-8 text-lg font-medium">
+          <li><a href="#hero" class="hover:text-blue-600 transition-colors">Home</a></li>
+          <li><a href="#about" class="hover:text-black transition-colors">About <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span></a></li>
+          <li class="relative group">
+            <a href="#founders" class="hover:text-green-600 transition-colors flex items-center">The Team <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></a>
+            <ul class="absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto transition-opacity z-50">
+              <li><a href="#founders" class="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600">Founders</a></li>
+              <li><a href="#advisors" class="block px-4 py-2 hover:bg-green-50 hover:text-green-600">Advisors</a></li>
+              <li><a href="#seniors" class="block px-4 py-2 hover:bg-yellow-50 hover:text-yellow-600">Senior Members</a></li>
+              <li><a href="#juniors" class="block px-4 py-2 hover:bg-red-50 hover:text-red-600">Junior Members</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="hover:text-yellow-500 transition-colors">Activities</a></li>
+          <li><a href="#footer" class="hover:text-red-600 transition-colors">Contact Us</a></li>
+        </ul>
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-2xl focus:outline-none">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
       </div>
-      <div class="header-text">
-        <h1 class="header-title">NYCER Foundation</h1>
-        <h2 class="header-subtitle">Nexus of Young Computer Engineers &amp; Researchers</h2>
-      </div>
-      <div class="uparrow"><a href="#hero"> ^ </a></div>
-    </div>
-    <div class="navbar">
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About <span class="nycer-brand"><span class="nycer-n">N</span><span
-                class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span
-                class="nycer-r">R</span></span></a></li>
-        <li class="dropdown">
-          <a href="#founders" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">The Team</a>
-          <ul class="dropdown-menu" role="menu" aria-label="Team submenu">
-            <li role="none"><a role="menuitem" href="#founders">Founders</a></li>
-            <li role="none"><a role="menuitem" href="#advisors">Advisors</a></li>
-            <li role="none"><a role="menuitem" href="#seniors">Senior Members</a></li>
-            <li role="none"><a role="menuitem" href="#juniors">Junior Members</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Activities</a></li>
-        <li><a href="#footer">Contact Us</a></li>
+      <!-- Mobile menu -->
+      <ul id="mobile-menu" class="md:hidden hidden flex-col space-y-2 mt-2 text-lg font-medium">
+        <li><a href="#hero" class="block py-2 px-4 hover:text-blue-600">Home</a></li>
+        <li><a href="#about" class="block py-2 px-4 hover:text-black">About <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span></a></li>
+        <li><a href="#founders" class="block py-2 px-4 hover:text-green-600">Founders</a></li>
+        <li><a href="#advisors" class="block py-2 px-4 hover:text-green-600">Advisors</a></li>
+        <li><a href="#seniors" class="block py-2 px-4 hover:text-yellow-600">Senior Members</a></li>
+        <li><a href="#juniors" class="block py-2 px-4 hover:text-red-600">Junior Members</a></li>
+        <li><a href="#" class="block py-2 px-4 hover:text-yellow-500">Activities</a></li>
+        <li><a href="#footer" class="block py-2 px-4 hover:text-red-600">Contact Us</a></li>
       </ul>
     </div>
-  </header>
+  </nav>
 
-  <div id="hero"></div>
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-left">
-      <h2>Connecting<br>Brilliance, Passion &amp; Purpose</h2>
-      <h3>The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span
-            class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation is a
-        non-profit body composed of a group of young researchers from the various computer science and engineering
-        domain to promote collaborative interdisciplinary research and development.</p>
-        <button>JOIN TODAY</button>
-    </div>
-    <div class="hero-right">
-      <img src="hero-image.png" alt="Hero Illustration">
-    </div>
-  </section>
 
-  <hr id="about">
-
-  <section class="about">
-    <!-- Vision Section -->
-    <div class="vision">
-      <h2>OUR VISION</h2>
-      <p>The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span
-            class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation
-        exists to empower young minds in computer science by building sustainable collaborative networks that amplify
-        individual impact and drive innovation in socially, economically and environmentally responsible research areas.
-      </p>
-    </div>
-    <!-- Mission Section -->
-    <div class="mission">
-      <h2>OUR MISSION</h2>
-      <p>The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span
-            class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation aims
-        to</p>
-      <div class="boxes">
-        <div class="box blue">BUILD A SELF-SUSTAINING NETWORK OF BRILLIANT MINDS IN COMPUTING</div>
-        <div class="box green">AMPLIFY THE IMPACT OF YOUNG INDIVIDUAL INNOVATORS IN TECHNOLOGY</div>
-        <div class="box yellow">ADDRESS PRESSING SOCIAL, ECONOMIC & ENVIRONMENTAL CHALLENGES THROUGH TECHNOLOGICAL
-          INNOVATION</div>
-        <div class="box red">UPHOLD ETHICAL STANDARDS BY PROMOTING MORALLY GROUNDED ADVANCES IN COMPUTING</div>
+  <!-- Main Content -->
+  <main class="snap-y snap-mandatory h-screen overflow-y-scroll">
+    <!-- Landing Page (Desktop/Tablet only) -->
+    <section id="landing" class="hidden md:flex flex-col items-center justify-center min-h-screen bg-white snap-start px-4 py-12 relative">
+      <img src="logo-image.png" alt="NYCER Logo" class="h-40 w-auto mb-8">
+      <h1 class="text-5xl font-bold mb-4"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span> Foundation</h1>
+      <h2 class="text-2xl font-semibold text-gray-700 mb-2">Nexus of Young Computer Engineers &amp; Researchers</h2>
+    <button onclick="document.getElementById('hero').scrollIntoView({behavior: 'smooth'})" class="absolute bottom-10 left-1/2 -translate-x-1/2 bg-white text-black rounded-full p-4 transition flex flex-col items-center animate-bounce hover:bg-blue-600 hover:text-white group">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+          <span class="sr-only">Scroll Down</span>
+        </button>
+    </section>
+    
+    <section id="hero" class="flex flex-col md:flex-row items-center justify-center min-h-screen bg-white snap-start px-4 py-12">
+      <div class="flex-1 flex flex-col items-start md:items-start space-y-6">
+        <!-- Only show on mobile: Title and subtitle -->
+        <h1 class="text-4xl font-bold text-blue-600 md:hidden">NYCER Foundation</h1>
+        <h2 class="text-2xl font-semibold text-gray-800 md:hidden">Nexus of Young Computer Engineers &amp; Researchers</h2>
+        <!-- Main tagline for all screens -->
+        <h3 class="text-2xl md:text-5xl text-gray-800 font-bold max-w-xl">Connecting Brilliance, Passion &amp; Purpose.</h3>
+        <p class="text-base md:text-lg text-gray-600 max-w-xl">The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation is a non-profit body composed of a group of young researchers from the various computer science and engineering domain to promote collaborative interdisciplinary research and development.</p>
+        <a href="#about" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition font-bold">JOIN TODAY</a>
       </div>
-    </div>
-  </section>
+      <div class="flex-1 flex justify-center items-center mt-8 md:mt-0">
+    <img src="hero-image.png" alt="Hero Illustration" class="w-72 md:w-96 rounded-xl">
+      </div>
+    </section>
 
-  <hr id="founders">
 
-  <!-- Founders Section -->
-  <section class="members founders">
-    <h2>OUR FOUNDERS</h2>
-    <div class="founders-list">
+    <section id="about" class="flex flex-col items-center justify-center min-h-screen bg-white snap-start px-4 py-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">OUR VISION</h2>
+      <p class="text-lg md:text-2xl text-gray-600 max-w-2xl text-center mb-8">The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation exists to empower young minds in computer science by building sustainable collaborative networks that amplify individual impact and drive innovation in socially, economically and environmentally responsible research areas.</p>
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">OUR MISSION</h2>
+      <p class="text-lg md:text-2xl text-gray-600 max-w-2xl text-center mb-8">The <span class="nycer-brand"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span></span> Foundation aims to</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+        <div class="bg-white border-4 border-blue-500 p-4 rounded-lg shadow text-blue-700 font-semibold text-center transition-transform duration-300 hover:scale-105 hover:bg-blue-500 hover:text-white cursor-pointer">BUILD A SELF-SUSTAINING NETWORK OF BRILLIANT MINDS IN COMPUTING</div>
+        <div class="bg-white border-4 border-green-500 p-4 rounded-lg shadow text-green-700 font-semibold text-center transition-transform duration-300 hover:scale-105 hover:bg-green-500 hover:text-white cursor-pointer">AMPLIFY THE IMPACT OF YOUNG INDIVIDUAL INNOVATORS IN TECHNOLOGY</div>
+        <div class="bg-white border-4 border-yellow-500 p-4 rounded-lg shadow text-yellow-700 font-semibold text-center transition-transform duration-300 hover:scale-105 hover:bg-yellow-500 hover:text-white cursor-pointer">ADDRESS PRESSING SOCIAL, ECONOMIC &amp; ENVIRONMENTAL CHALLENGES THROUGH TECHNOLOGICAL INNOVATION</div>
+        <div class="bg-white border-4 border-red-500 p-4 rounded-lg shadow text-red-700 font-semibold text-center transition-transform duration-300 hover:scale-105 hover:bg-red-500 hover:text-white cursor-pointer">UPHOLD ETHICAL STANDARDS BY PROMOTING MORALLY GROUNDED ADVANCES IN COMPUTING</div>
+      </div>
+    </section>
 
-      <a href="https://www.linkedin.com/in/ayan-panja-45889bb7/">
-        <div class="founder">
-          <div class="founder-img">
-            <img src="images/founders/akp.png" alt="Dr. Ayan Kumar Panja">
-            <div class="name">Dr. Ayan Kumar Panja</div>
-            <div class="designation">Treasurer</div>
+
+    <section id="founders" class="flex flex-col items-center justify-center min-h-screen bg-gray-50 snap-start px-4 py-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">OUR FOUNDERS</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8 w-full max-w-6xl founders-list">
+        <a href="https://www.linkedin.com/in/ayan-panja-45889bb7/" class="flex flex-col items-center bg-white p-6 rounded-lg shadow hover:scale-105 transition-transform founder">
+          <img src="images/founders/akp.png" alt="Dr. Ayan Kumar Panja" class="w-32 h-32 rounded-full mb-4">
+          <div class="name text-xl font-semibold">Dr. Ayan Kumar Panja</div>
+          <div class="designation text-blue-600 font-medium mb-2">Treasurer</div>
+          <div class="description text-gray-600 text-center text-sm">Dr. Ayan Kumar Panja contributes in the areas of smart sensing, indoor-outdoor localization, and wireless systems. His research explores context-aware computing and edge-based learning systems.</div>
+        </a>
+        <a href="https://www.linkedin.com/in/dr-swarnendu-ghosh-a6a042237/" class="flex flex-col items-center bg-white p-6 rounded-lg shadow hover:scale-105 transition-transform founder">
+          <img src="images/founders/swg.png" alt="Dr. Swarnendu Ghosh" class="w-32 h-32 rounded-full mb-4">
+          <div class="name text-xl font-semibold">Dr. Swarnendu Ghosh</div>
+          <div class="designation text-green-600 font-medium mb-2">President</div>
+          <div class="description text-gray-600 text-center text-sm">Dr. Swarnendu Ghosh specializes in computer vision, deep learning, and generative AI. His scholarly contributions range from neural architectures and image segmentation to graph-based representation learning.</div>
+        </a>
+        <a href="https://www.linkedin.com/in/deepsubhra-guha-roy-phd-18787a124/" class="flex flex-col items-center bg-white p-6 rounded-lg shadow hover:scale-105 transition-transform founder">
+          <img src="images/founders/dgr.png" alt="Dr. Deepsubhra Guha Roy" class="w-32 h-32 rounded-full mb-4">
+          <div class="name text-xl font-semibold">Dr. Deepsubhra Guha Roy</div>
+          <div class="designation text-red-600 font-medium mb-2">Secretary</div>
+          <div class="description text-gray-600 text-center text-sm">Dr. Deepsubhra Guha Roy brings deep expertise in mobile cloud computing, federated learning, and IoT systems. His work focuses on integrating intelligent orchestration with secure, scalable digital infrastructures.</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Advisors Section -->
+    <section id="advisors" class="flex flex-col items-center justify-center min-h-screen bg-white snap-start px-4 py-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">OUR ADVISORS</h2>
+      <div class="w-full max-w-4xl bg-gray-100 rounded-lg shadow p-6 overflow-x-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="flex flex-col items-center bg-white p-4 rounded-lg shadow">
+            <img src="images/advisors/akp.png" alt="Prof. Soumya K. Ghosh" class="w-24 h-24 rounded-full mb-2">
+            <div class="text-lg font-semibold">Prof. Soumya K. Ghosh <span class="italic text-xs text-gray-500">(Legal Advisor)</span></div>
+            <div class="text-sm text-gray-600 mb-1">Professor, Jadavpur University</div>
+            <div class="text-xs text-gray-500 text-center">Prof. Soumya K. Ghosh is a Professor in the Department of Computer Science and Engineering at Jadavpur University, Kolkata, India. He has over 25 years of experience in research and teaching in the areas of Data Mining, Machine Learning, and Bioinformatics.</div>
           </div>
-          <div class="description">Dr. Ayan Kumar Panja contributes in the areas of smart sensing, indoor-outdoor
-            localization, and wireless systems. His research explores context-aware computing and edge-based learning
-            systems.</div>
-        </div>
-      </a>
-
-      <a href="https://www.linkedin.com/in/dr-swarnendu-ghosh-a6a042237/">
-        <div class="founder">
-          <div class="founder-img">
-            <img src="images/founders/swg.png" alt="Dr. Swarnendu Ghosh">
-            <div class="name">Dr. Swarnendu Ghosh</div>
-            <div class="designation">President</div>
+          <div class="flex flex-col items-center bg-white p-4 rounded-lg shadow">
+            <img src="images/advisors/akp.png" alt="Prof. Soumya K. Ghosh" class="w-24 h-24 rounded-full mb-2">
+            <div class="text-lg font-semibold">Prof. Soumya K. Ghosh <span class="italic text-xs text-gray-500">(Legal Advisor)</span></div>
+            <div class="text-sm text-gray-600 mb-1">Professor, Jadavpur University</div>
+            <div class="text-xs text-gray-500 text-center">Prof. Soumya K. Ghosh is a Professor in the Department of Computer Science and Engineering at Jadavpur University, Kolkata, India. He has over 25 years of experience in research and teaching in the areas of Data Mining, Machine Learning, and Bioinformatics.</div>
           </div>
-          <div class="description">Dr. Swarnendu Ghosh specializes in computer vision, deep learning, and generative AI.
-            His scholarly contributions range from neural architectures and image segmentation to graph-based
-            representation learning.</div>
-        </div>
-      </a>
-
-      <a href="https://www.linkedin.com/in/deepsubhra-guha-roy-phd-18787a124/">
-        <div class="founder">
-          <div class="founder-img">
-            <img src="images/founders/dgr.png" alt="Dr. Deepsubhra Guha Roy">
-            <div class="name">Dr. Deepsubhra Guha Roy</div>
-            <div class="designation">Secretary</div>
+          <div class="flex flex-col items-center bg-white p-4 rounded-lg shadow">
+            <img src="images/advisors/akp.png" alt="Prof. Soumya K. Ghosh" class="w-24 h-24 rounded-full mb-2">
+            <div class="text-lg font-semibold">Prof. Soumya K. Ghosh <span class="italic text-xs text-gray-500">(Legal Advisor)</span></div>
+            <div class="text-sm text-gray-600 mb-1">Professor, Jadavpur University</div>
+            <div class="text-xs text-gray-500 text-center">Prof. Soumya K. Ghosh is a Professor in the Department of Computer Science and Engineering at Jadavpur University, Kolkata, India. He has over 25 years of experience in research and teaching in the areas of Data Mining, Machine Learning, and Bioinformatics.</div>
           </div>
-          <div class="description">Dr. Deepsubhra Guha Roy brings deep expertise in mobile cloud computing, federated
-            learning, and IoT systems. His work focuses on integrating intelligent orchestration with secure, scalable
-            digital infrastructures.</div>
         </div>
-      </a>
-    </div>
-  </section>
+      </div>
+    </section>
+    <!-- Seniors Section -->
+    <section id="seniors" class="flex flex-col items-center justify-center min-h-screen bg-gray-50 snap-start px-4 py-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">OUR SENIOR MEMBERS</h2>
+      <div class="w-full max-w-5xl bg-white rounded-lg shadow p-6 overflow-x-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <a href="#seniors" class="flex flex-col items-center bg-gray-100 p-4 rounded-lg shadow hover:scale-105 transition-transform">
+            <img src="images/advisors/akp.png" alt="Prof. Soumya K. Ghosh" class="w-20 h-20 rounded-full mb-2">
+            <div class="text-lg font-semibold">Prof. Soumya K. Ghosh</div>
+            <div class="text-sm text-gray-600 mb-1">Professor, Jadavpur University</div>
+            <div class="text-xs text-gray-500 text-center">Prof. Soumya K. Ghosh is a Professor in the Department of Computer Science and Engineering at Jadavpur University, Kolkata, India. He has over 25 years of experience in research and teaching in the areas of Data Mining, Machine Learning, and Bioinformatics.</div>
+            <div class="text-xs text-blue-700 mt-2"><b>Area of Interest:</b> Data Mining, Machine Learning, and Bioinformatics.</div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Juniors Section -->
+    <section id="juniors" class="flex flex-col items-center justify-center min-h-screen bg-white snap-start px-4 py-12">
+      <h2 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">OUR JUNIOR MEMBERS</h2>
+      <div class="w-full max-w-5xl bg-gray-50 rounded-lg shadow p-6 overflow-x-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <a href="#juniors" class="flex flex-col items-center bg-white p-4 rounded-lg shadow hover:scale-105 transition-transform">
+            <img src="images/advisors/akp.png" alt="Prof. Soumya K. Ghosh" class="w-16 h-16 rounded-full mb-2">
+            <div class="text-lg font-semibold">Prof. Soumya K. Ghosh</div>
+            <div class="text-sm text-gray-600 mb-1">Professor, Jadavpur University</div>
+            <div class="text-xs text-blue-700 mt-2"><b>Area of Interest:</b> Data Mining, Machine Learning, and Bioinformatics.</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   
 <!--
@@ -226,112 +283,55 @@
   </section>
 -->
 
-  <footer class="footer-distributed" id="footer">
-    <div class="footer-left">
-      <img src="logo white.png" alt="NYCER Logo" class="footer-logo">
-      <p class="footer-company-name">NYCER Foundation © 2025</p>
-    </div>
-    <div class="footer-center">
-      <div>
-        <i class="fa fa-map-location-dot"></i>
-        <p> B3, Block 3, Airport City Phase 2,<br>BH 40/1 Jessore Road,<br>Kolkata 700081, West Bengal, India</p>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white py-8 mt-8" id="footer">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="flex items-center space-x-2 mb-4 md:mb-0">
+        <img src="logo white.png" alt="NYCER Logo" class="h-14 w-auto">
+        <span class="font-bold text-lg"><span class="nycer-n">N</span><span class="nycer-y">Y</span><span class="nycer-c">C</span><span class="nycer-e">E</span><span class="nycer-r">R</span> Foundation</span>
       </div>
-      <div>
-        <i class="fa-brands fa-whatsapp"></i>
-        <p>+ 91 7059114483</p>
+      <div class="text-sm text-center md:text-left">
+        <div>B3, Block 3, Airport City Phase 2,<br>BH 40/1 Jessore Road,<br>Kolkata 700081, West Bengal, India</div>
+        <div class="mt-2"><i class="fa-brands fa-whatsapp mr-1"></i>+91 7059114483</div>
+        <div class="mt-2"><i class="fa-regular fa-envelope mr-1"></i><a href="mailto:nycer-foundation@gmail.com" class="underline text-blue-300">nycer-foundation@gmail.com</a></div>
       </div>
-      <div>
-        <i class="fa-regular fa-envelope"></i>
-        <p><a href="mailto:nycer-foundation@gmail.com">nycer-foundation@gmail.com</a></p>
-      </div>
-    </div>
-    <div class="footer-right">
-      <p class="footer-company-about">
-        <span>About the Foundation</span>
-        The NYCER Foundation is a non-profit body
-      </p>
-      <div class="footer-icons">
-        <a href="https://www.facebook.com/profile.php?id=61579368281307"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://x.com/NycerFoundation"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://www.linkedin.com/company/nycer-foundation/"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/nycer-foundation"><i class="fa-brands fa-github"></i></a>
+      <div class="flex flex-col items-center md:items-end mt-4 md:mt-0">
+        <span class="mb-2 font-semibold">About the Foundation</span>
+        <span class="mb-2 text-xs">The NYCER Foundation is a non-profit body</span>
+        <div class="flex space-x-4 mt-2">
+          <a href="https://www.facebook.com/profile.php?id=61579368281307" class="hover:text-blue-400"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://x.com/NycerFoundation" class="hover:text-blue-300"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com/company/nycer-foundation/" class="hover:text-blue-400"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/nycer-foundation" class="hover:text-gray-400"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <div class="text-xs mt-2">&copy; 2025 NYCER Foundation. All rights reserved.</div>
       </div>
     </div>
   </footer>
 
+  <!-- Mobile menu toggle script -->
   <script>
-    document.querySelectorAll('.navbar a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function (e) {
-        const targetId = this.getAttribute('href').slice(1);
-        const target = document.getElementById(targetId);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth" });
-          this.focus(); // Restore focus to the link
-        }
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+    // Dropdown hover for desktop with delay on mouse leave
+    document.querySelectorAll('nav .group').forEach(group => {
+      let hideTimeout;
+      group.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimeout);
+        const menu = group.querySelector('ul');
+        if(menu) menu.classList.remove('opacity-0','pointer-events-none');
+      });
+      group.addEventListener('mouseleave', () => {
+        const menu = group.querySelector('ul');
+        hideTimeout = setTimeout(() => {
+          if(menu) menu.classList.add('opacity-0','pointer-events-none');
+        }, 180); // 180ms delay before hiding
       });
     });
-  </script>
-  <script>
-    // Dropdown toggle and keyboard accessibility
-    (() => {
-      const dropdown = document.querySelector('.navbar .dropdown');
-      if (!dropdown) return;
-      const toggle = dropdown.querySelector('.dropdown-toggle');
-      const menu = dropdown.querySelector('.dropdown-menu');
-
-      const closeAll = () => {
-        dropdown.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-      };
-
-      toggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        const open = dropdown.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-
-      // Close when clicking outside
-      document.addEventListener('click', (e) => {
-        if (!dropdown.contains(e.target)) closeAll();
-      });
-
-      // Keyboard handling
-      toggle.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          dropdown.classList.add('open');
-          toggle.setAttribute('aria-expanded', 'true');
-          const first = menu.querySelector('a');
-          if (first) first.focus();
-        }
-      });
-
-      menu.querySelectorAll('a').forEach((item) => {
-        item.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape') { closeAll(); toggle.focus(); }
-        });
-      });
-    })();
-  </script>
-  <script>
-    // Close dropdown when a menu item is clicked (so it doesn't stay open after navigation)
-    (function () {
-      const dropdown = document.querySelector('.navbar .dropdown');
-      if (!dropdown) return;
-      const menuLinks = dropdown.querySelectorAll('.dropdown-menu a');
-
-      menuLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          // Allow default navigation/scroll behavior but immediately hide the menu
-          dropdown.classList.remove('open');
-          // add temporary closing flag to prevent hover from keeping it open for a moment
-          dropdown.classList.add('closing');
-          link.setAttribute('aria-pressed', 'true');
-          setTimeout(() => dropdown.classList.remove('closing'), 250);
-        });
-      });
-    })();
   </script>
 </body>
 
